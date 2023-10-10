@@ -13,7 +13,6 @@ const buttons = document.querySelectorAll('.button');
 function handleButtonClick(value) {
   if (value === '=') {
     try {
-      // Replace ÷ with / and evaluate
       const modifiedExpression = inputString.replace(/÷/g, '/');
       resultString = evaluateExpression(modifiedExpression);
       resultField.value = resultString;
@@ -42,7 +41,6 @@ function handleButtonClick(value) {
   } else {
     if (isOperator(value) && value !== '%' && value !== '√') {
       if (operatorClicked) {
-        // Avoid adding multiple consecutive operators
         return;
       }
       operatorClicked = true;
@@ -86,4 +84,6 @@ buttons.forEach((button) => {
     handleButtonClick(e.target.innerHTML);
   });
 });
+
+
 
